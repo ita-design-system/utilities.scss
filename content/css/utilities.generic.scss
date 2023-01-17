@@ -1,9 +1,9 @@
 ---
 ---
 /*
-    POINT D'ENTRÉE TYPO
-    Déclarations @font-face du projet
+    POINT D'ENTRÉE UTILITAIRES GÉNÉRIQUE
 */
+
 /*
     CORE
     Settings and main functionalities
@@ -19,9 +19,10 @@
     User settings
 */
 @import 'briks/settings/tokens/generic';
+@import 'utilities_generic';
 /*
-    CSS VARIABLES
+    UTILITIES
     Requires _core.scss
-    This file generates CSS variables into the output file
+    Génération des classes utilitaires
 */
-@import 'briks/fonts';
+@import 'briks/utilities';

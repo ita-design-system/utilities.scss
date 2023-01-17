@@ -1,60 +1,3 @@
-# utilities.scss
-
-[Documentation](https://ita-design-system.github.io/utilities.scss/)
-
-Utilitaires génériques. 
-
-## Typologie d'un utilitaire générique
-
-```scss
-// SCSS map
-$briks-utilities: (
-    // Propriété CSS de l'utilitaire
-    // Syntaxe CSS exacte par ex. "background-image"
-    PROPRIÉTÉ_CSS: (
-        // Composant activé true ou false
-        enabled: true,
-        // Utilitaire responsive true ou false
-        responsive: true,
-        // Préfixe de l'utilitaire qui suit le préfixe u-
-        // SCSS String
-        prefix: 'PREFIXE-',
-        // Liste des noms associés aux valeurs
-        // SCSS map
-        // Compatible avec
-        // $briks-colors
-        // $briks-font-families
-        // $briks-font-sizes
-        // $briks-borders
-        // $briks-border-radius
-        // $briks-shadows
-        names-and-values: $briks-colors, // Exemple
-        // ou noms => valeurs personnalisées
-        // names-and-values: (
-        //     NOM_1: VALEUR_1,
-        //     NOM_2: VALEUR_2,
-        //     NOM_3: VALEUR_3
-        //     ...
-        // ),
-        // Optionnel: ajout de de noms associés / valeurs
-        additional-names-and-values: (
-            //     NOM_1: VALEUR_1,
-            //     NOM_2: VALEUR_2,
-            //     NOM_3: VALEUR_3
-        ),
-        // Optionnel: Prise en charge des pseudo-classes
-        // Ajout d'une liste de pseudo-classes
-        // Par ex. (hover, active, focus)
-        pseudo-classes: (PSEUDO_CLASSE_1, PSEUDO_CLASSE_2, ...)
-    )
-)
-```
-
-## Configuration
-
-Organisation et description du fichier de configuration [_sass/_utilities_generic.scss](_sass/_utilities_generic.scss).
-
-```scss
 /*
     UTILITAIRES GÉNÉRIQUES
     v0.1.0
@@ -191,8 +134,3 @@ $briks-utilities: (
         responsive: false
     )
 );
-``` 
-
-## Extensions
-
-Il est possible d'étendre les fonctionnalités des utilitaires en ajoutant simplement un point d'entrée avec une déclaration `$briks-utilities` à la typologie identique mais avec des propriétés par défaut et des modifieurs qui surchargent ou ajoutent des propriétés CSS.
