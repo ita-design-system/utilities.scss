@@ -1,0 +1,2 @@
+# utilities.scss
+Utilitaires génériques
