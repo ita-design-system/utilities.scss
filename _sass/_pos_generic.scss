@@ -1,0 +1,131 @@
+/*
+    C-POS
+    v0.1.0
+    Composant générique CSS ITADS
+    https://github.com/ita-design-system/c-pos.scss
+*/
+// SCSS map
+$briks-components-generic: ( 
+    // Nom du composant
+    pos: ( 
+        // Composant activé true ou false
+        enabled: true, 
+        // Responsive activé true ou false
+        responsive: true, 
+        // Liste des propriétés c-flex par défaut
+        defaults: (),
+        // Rendu: 
+        // c-pos {
+        // }
+        // Liste des modifieurs contenant chacun une liste de propriétés qui 
+        // soit surchargent les propriétés par défaut
+        // soit ajoutent des propriétés
+        // soit les deux
+        modifiers: ( 
+            // c-pos m-absolute
+            absolute: (
+                position: absolute
+            ),
+            // c-pos m-fixed
+            fixed: (
+                position: fixed
+            ),
+            // c-pos m-sticky
+            sticky: (
+                position: sticky
+            ),
+            // c-pos m-relative
+            relative: (
+                position: relative
+            ),
+            // c-pos m-top-0
+            top-0: (
+                top: 0%
+            ),
+            // c-pos m-top-50
+            top-50: (
+                top: 50%
+            ),
+            // c-pos m-top-100
+            top-100: (
+                top: 100%
+            ),
+            // c-pos m-right-0
+            right-0: (
+                right: 0%
+            ),
+            // c-pos m-right-50
+            right-50: (
+                right: 50%
+            ),
+            // c-pos m-right-100
+            right-100: (
+                right: 100%
+            ),
+            // c-pos m-bottom-0
+            bottom-0: (
+                bottom: 0%
+            ),
+            // c-pos m-bottom-50
+            bottom-50: (
+                bottom: 50%
+            ),
+            // c-pos m-bottom-100
+            bottom-100: (
+                bottom: 100%
+            ),
+            // c-pos m-left-0
+            left-0: (
+                left: 0%
+            ),
+            // c-pos m-left-50
+            left-50: (
+                left: 50%
+            ),
+            // c-pos m-left-100
+            left-100: (
+                left: 100%
+            ),
+            // c-pos m-offset-50-50
+            offset-50-50: (
+                transform: translateX(-50%) translateY(-50%)
+            ),
+            // c-pos m-offset-0-50
+            offset-0-50: (
+                transform: translateX(0%) translateY(-50%)
+            ),
+            // c-pos m-offset-50-0
+            offset-50-0: (
+                transform: translateX(50%) translateY(0%)
+            ),
+            // c-pos m-z--1
+            z--1: (
+                z-index: -1
+            ),
+            // c-pos m-z-1
+            z-1: (
+                z-index: 100
+            ),
+            // c-pos m-z-2
+            z-2: (
+                z-index: 200
+            ),
+            // c-pos m-z-3
+            z-3: (
+                z-index: 300
+            ),
+            // c-pos m-z-4
+            z-4: (
+                z-index: 400
+            ),
+            // c-pos m-z-5
+            z-5: (
+                z-index: 500
+            ),
+            // c-pos m-z-6
+            z-6: (
+                z-index: 600
+            )
+        )
+    )
+);
