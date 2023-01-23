@@ -28,20 +28,14 @@ $briks-utilities: (
         // $briks-borders
         // $briks-border-radius
         // $briks-shadows
-        names-and-values: $briks-colors, // Exemple
-        // ou noms => valeurs personnalisées
+        names-and-values: 
         // names-and-values: (
-        //     NOM_1: VALEUR_1,
-        //     NOM_2: VALEUR_2,
+        //     NOM_1: my-color(TOKEN_COULEUR),
+        //     NOM_2: my-font-size(TOKEN_TAILLE_DE_TYPO),
+        //     ...
         //     NOM_3: VALEUR_3
         //     ...
         // ),
-        // Optionnel: ajout de de noms associés / valeurs
-        additional-names-and-values: (
-            //     NOM_1: VALEUR_1,
-            //     NOM_2: VALEUR_2,
-            //     NOM_3: VALEUR_3
-        ),
         // Optionnel: Prise en charge des pseudo-classes
         // Ajout d'une liste de pseudo-classes
         // Par ex. (hover, active, focus)
@@ -62,81 +56,86 @@ Organisation et description du fichier de configuration [_sass/_utilities_generi
     https://github.com/ita-design-system/utilities.scss
 */
 $briks-utilities: (
+    background: (
+        enabled: true,
+        prefix: 'bg-',
+        names-and-values: (
+            none: none
+        ),
+        // pseudo-classes: (hover, active),
+        responsive: true
+    ),
     background-color: (
         enabled: true,
         prefix: 'bc-',
-        names-and-values: $briks-colors,
+        names-and-values: (
+            0: transparent
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (
-        //     'transparent': transparent
-        // ),
-        responsive: false
+        responsive: true
     ),
     border: (
         enabled: true,
         prefix: 'b-',
-        names-and-values: $briks-borders,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     border-top: (
         enabled: true,
         prefix: 'bt-',
-        names-and-values: $briks-borders,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     border-right: (
         enabled: true,
         prefix: 'br-',
-        names-and-values: $briks-borders,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     border-bottom: (
         enabled: true,
         prefix: 'bb-',
-        names-and-values: $briks-borders,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     border-left: (
         enabled: true,
         prefix: 'bl-',
-        names-and-values: $briks-borders,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     border-radius: (
         enabled: true,
         prefix: 'brad-',
-        names-and-values: $briks-border-radius,
+        names-and-values: (
+            0: none
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
-    ),
-    box-shadow: (
-        enabled: true,
-        prefix: 'bs-',
-        names-and-values: $briks-shadows,
-        // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     color: (
         enabled: true,
         prefix: 'c-',
-        names-and-values: $briks-colors,
+        names-and-values: (
+            0: transparent
+        ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (
-        //     'transparent': transparent
-        // ),
-        responsive: false
+        responsive: true
     ),
     cursor: (
         enabled: true,
@@ -145,8 +144,7 @@ $briks-utilities: (
             pointer: pointer
         ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     display: (
         enabled: true,
@@ -166,8 +164,7 @@ $briks-utilities: (
             none: none
         ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     ),
     pointer-events: (
         enabled: true,
@@ -177,7 +174,6 @@ $briks-utilities: (
             auto: auto
         ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
         responsive: true
     ),
     visibility: (
@@ -187,8 +183,7 @@ $briks-utilities: (
             hidden: hidden
         ),
         // pseudo-classes: (hover),
-        // additional-names-and-values: (),
-        responsive: false
+        responsive: true
     )
 );
 ``` 
