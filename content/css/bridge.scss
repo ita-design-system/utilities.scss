@@ -156,45 +156,26 @@ $content: $content+'[';
         $content: $content+'"enabled": "'+map-get($value, enabled)+'",';
         $content: $content+'"prefix": "'+map-get($value, prefix)+'",';
         $content: $content+'"responsive": "'+map-get($value, responsive)+'"';
-        @if type-of(map-get($value, names-and-values)) == map {
-            // Merge sources of names and values
-            $content: $content+',';
-            $name-and-values-fusion: map-get($value, names-and-values);
-            @if type-of(map-get($value, additional-names-and-values)) == map {
-                $name-and-values-fusion: map-merge(map-get($value, names-and-values), map-get($value, additional-names-and-values));
+        $content: $content+',';
+        $content: $content+'"names-and-values": {';
+            @each $u_name, $u_value in map-get($value, names-and-values) {
+                $content: $content+'"'+$u_name+'": "'+$u_value+'"';
+                @if index((map-get($value, names-and-values)), ($u_name $u_value)) != length(map-get($value, names-and-values)) {
+                    $content: $content+',';
+                }
             }
-            $content: $content+'"names-and-values": {';
-                @each $u_name, $u_value in $name-and-values-fusion {
-                    @if $name == 'font-family' {
-                        @if type-of(map-get($u_value, name)) == string {
-                            @if map-get($u_value, type) == 'websafe' or map-get($u_value, fallback) == null {
-                                $content: $content+'"'+$u_name+'": "'+map-get($u_value, name)+'"';
-                            } @else {
-                                $content: $content+'"'+$u_name+'": "'+map-get($u_value, name)+', '+map-get($u_value, fallback)+'"';
-                            }
-                        } @else {
-                            $content: $content+'"'+$u_name+'": "'+map-get($u_value, name)+'"';
-                        }
-                    } @else {
-                        $content: $content+'"'+$u_name+'": "'+$u_value+'"';
-                    }
-                    @if index(($name-and-values-fusion), ($u_name $u_value)) != length($name-and-values-fusion) {
+        $content: $content+'}';
+        // If pseudo classes are set
+        @if type-of(map-get($value, pseudo-classes)) == list or type-of(map-get($value, pseudo-classes)) == string {
+            $content: $content+',';
+            $content: $content+'"pseudo-classes": [';
+                @each $u_name, $u_value in map-get($value, pseudo-classes) {
+                    $content: $content+'"'+$u_name+'"';
+                    @if index((map-get($value, pseudo-classes)), ($u_name)) != length(map-get($value, pseudo-classes)) {
                         $content: $content+',';
                     }
                 }
-            $content: $content+'}';
-            // If pseudo classes are set
-            @if type-of(map-get($value, pseudo-classes)) == list or type-of(map-get($value, pseudo-classes)) == string {
-                $content: $content+',';
-                $content: $content+'"pseudo-classes": [';
-                    @each $u_name, $u_value in map-get($value, pseudo-classes) {
-                        $content: $content+'"'+$u_name+'"';
-                        @if index((map-get($value, pseudo-classes)), ($u_name)) != length(map-get($value, pseudo-classes)) {
-                            $content: $content+',';
-                        }
-                    }
-                $content: $content+']';
-            }
+            $content: $content+']';
         }
     $content: $content+'}';
     @if index(($content-temp), ($name $value)) != length($content-temp) {
