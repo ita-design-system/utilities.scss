@@ -51,7 +51,7 @@ Organisation et description du fichier de configuration [_sass/_utilities_generi
 ```scss
 /*
     UTILITAIRES GÉNÉRIQUES
-    v0.1.0
+    v0.2.0
     Configuration des utilitaires génériques CSS ITADS
     https://github.com/ita-design-system/utilities.scss
 */
@@ -122,6 +122,51 @@ $briks-utilities: (
     border-radius: (
         enabled: true,
         prefix: 'brad-',
+        names-and-values: (
+            0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    border-top-left-radius: (
+        enabled: true,
+        prefix: 'bradtl-',
+        names-and-values: (
+            0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    border-top-right-radius: (
+        enabled: true,
+        prefix: 'bradtr-',
+        names-and-values: (
+            0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    border-bottom-right-radius: (
+        enabled: true,
+        prefix: 'bradbr-',
+        names-and-values: (
+            0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    border-bottom-left-radius: (
+        enabled: true,
+        prefix: 'bradbl-',
+        names-and-values: (
+            0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    box-shadow: (
+        enabled: true,
+        prefix: 'bs-',
         names-and-values: (
             0: none
         ),
