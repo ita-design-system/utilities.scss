@@ -1,6 +1,6 @@
 /*
     UTILITAIRES GÉNÉRIQUES
-    v0.1.1
+    v0.2.0
     Configuration des utilitaires génériques CSS ITADS
     https://github.com/ita-design-system/utilities.scss
 */
@@ -109,6 +109,15 @@ $briks-utilities: (
         prefix: 'bradbl-',
         names-and-values: (
             0: 0
+        ),
+        // pseudo-classes: (hover),
+        responsive: true
+    ),
+    box-shadow: (
+        enabled: true,
+        prefix: 'bs-',
+        names-and-values: (
+            0: none
         ),
         // pseudo-classes: (hover),
         responsive: true
